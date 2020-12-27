@@ -1,2 +1,8 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="main posts-index">
+    <div class="container">
+        <%= form_tag "/posts/create", class: "form posts-new" do %>
+            <textarea name="content"></textarea>
+            <input type="submit" value="Post">
+        <% end %>
+    </div>
+</div>

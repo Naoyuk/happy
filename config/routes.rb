@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   get 'posts/index'
-  get 'posts/show'
-  get 'posts/new'
-  post 'posts/create'
   get 'posts/edit'
+  get 'posts/new'
+  get 'posts/:id' => 'posts#show'
+
+  post 'posts/create'
   post 'posts/update'
-  delete 'posts/destroy'
   
+  delete 'posts/destroy'
+
   get "/" => "home#top"
   get "/about" => "home#about"
 end
