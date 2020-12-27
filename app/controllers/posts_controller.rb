@@ -15,13 +15,23 @@ class PostsController < ApplicationController
     @post = Post.new(content: params[:content])
     if @post.save
       redirect_to "/posts/index"
+    else
+      new
     end
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.content = params[:content]
+    if @post.save
+      redirect_to '/posts/index'
+    else
+      edit
+    end
   end
 
   def destroy
