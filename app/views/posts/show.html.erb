@@ -6,7 +6,8 @@
                 <%= @post.created_at %>
             </div>
             <div class="post-menus">
-                <%= link_to "edit", "/posts/#{@post.id}/edit" %>
+                <%= link_to "Edit", "/posts/#{@post.id}/edit" %>
+                <%= link_to "Delete", "/posts/#{@post.id}/destroy", {method: :post} %>
             </div>
         </div>
     </div>
