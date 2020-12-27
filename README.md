@@ -1,24 +1,13 @@
-# README
+# Happy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Happyは毎日ハッピーだと感じたことを3つ書き込むショートダイアリーアプリです。  
+毎週、振り返りを表示します。
 
 * Ruby version
+2.7.2p137
 
 * System dependencies
-
-* Configuration
+rails 6.1.0
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`# rails db:migrate`
