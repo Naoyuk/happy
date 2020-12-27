@@ -1,8 +1,10 @@
 <div class="main posts-index">
     <div class="container">
         <div class="posts-show">
-            <div class="posts-show-item"><%= @post.content %></div>
-            <div class="post-time"><%= @post.created_at %></div>
+            <div class="posts-show-item">
+                <p><%= @post.content %></p>
+                <div class="post-time"><%= @post.created_at %></div>
+            </div>
         </div>
     </div>
 </div>
