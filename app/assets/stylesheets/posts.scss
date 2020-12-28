@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 /* posts/index ================================ */
+.posts-index-day {
+  overflow: hidden;
+  box-shadow:  0 2px 6px #c1ced7;
+  padding: 2em;
+}
+
 .posts-index-item {
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;

@@ -2,6 +2,7 @@
     <div class="container">
         <%= form_tag "/posts/create", class: "form posts-new" do %>
             <textarea name="content"></textarea>
+            <input type="hidden" name="day_id" value="2">
             <input type="submit" value="Post">
         <% end %>
     </div>
