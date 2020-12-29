@@ -1,0 +1,9 @@
+<div class="main posts-new">
+    <div class="container">
+        <%= form_tag "/days/create", class: "form posts-new" do %>
+            <textarea name="content"></textarea>
+            <input type="hidden" name="date" value="<%= @day.date %>">
+            <input type="submit" value="Post">
+        <% end %>
+    </div>
+</div>
