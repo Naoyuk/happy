@@ -4,7 +4,7 @@
         <% @days.each do |d| %>
         <h2 class="post-date-header"><%= d.date %></h2>
         <ul class="posts-index-day">
-            <% posts = d.posts %>
+            <% posts = d.posts.order(created_at: :desc) %>
             <% posts.each do |post| %>
                 <li class="posts-index-item"><%= link_to post.content, "/posts/#{post.id}" %></li>
             <% end %>
