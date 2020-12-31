@@ -212,3 +212,9 @@ header {
     padding: 10px 20px;
     border-radius: 30px;
 }
+
+textarea {
+    font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
