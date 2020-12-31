@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'home#top'
+  get "/about" => "home#about"
+
   get 'days/new' => 'days#new'
-  get 'posts/index' => 'posts#index'
+  get 'posts/index'
   get 'posts/:id/edit' => 'posts#edit'
   get 'posts/new' => 'posts#new'
   get 'posts/:id' => 'posts#show'
@@ -10,6 +14,4 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => 'posts#destroy'
   post 'days/create' => 'days#create'
 
-  get "/" => "home#top"
-  get "/about" => "home#about"
 end
