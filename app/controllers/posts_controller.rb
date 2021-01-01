@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @days = Day.all.order(date: :desc)
+    @days = Day.eager_load(:posts).where(posts: {user_id: current_user.id}).order(date: :desc)
     #@posts = Post.all.order(created_at: :desc)
   end
 
