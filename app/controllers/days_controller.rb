@@ -13,7 +13,7 @@ class DaysController < ApplicationController
       redirect_to "/posts/index"
     else
       puts @day.errors
-      redirect_to "/about"
+      redirect_to "/about" # TODO: redirect_to "new" and show errors
     end
   end
 end
