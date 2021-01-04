@@ -31,6 +31,16 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # for RSpec over 3.0
+  config.infer_spec_type_from_file_location!
+
+  # To omit class name when you use FactoryBot
+  config.include FactoryBot::Syntax::Methods
+
+  # To use Devise Test Helpers
+  config.include Devise::Test::IntegrationHelpers
+
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -61,4 +71,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
 end
