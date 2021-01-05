@@ -259,7 +259,6 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
-  tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
