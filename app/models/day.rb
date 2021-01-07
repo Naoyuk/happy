@@ -1,5 +1,5 @@
 class Day < ApplicationRecord
-    has_many :posts
+  validates :date, presence: true, uniqueness: true
 
-    validates :date, presence: true, uniqueness: true
+  has_many :posts
 end
