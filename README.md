@@ -16,7 +16,3 @@ This app doesn't have any features to send emails.
 You need to remind the email to log in this app.
 So you can try it with fake email address.
 
----
-
-* Updates
-- Jan 5, 2021: Published on heroku. [Happy](https://happies.herokuapp.com/ "Happy")
