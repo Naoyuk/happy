@@ -51,7 +51,15 @@ RSpec.describe "Posts", type: :system do
     end
 
     context "an author" do
-      it "see stars as count of posts on each day"
+      it "see stars as count of posts on each day" do
+        another_user = create(:user)
+        my_post1 = create(:post, user_id: @user.id, day_id: @day.id)
+        my_post2 = create(:post, user_id: @user.id, day_id: @day.id)
+        another_user_post = create(:post, user_id: another_user.id, day_id: @day.id)
+
+        visit posts_index_path
+        expect(all('.fas').size).to eq(2)
+      end
     end
   end
 
