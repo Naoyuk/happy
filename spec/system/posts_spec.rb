@@ -51,16 +51,31 @@ RSpec.describe "Posts", type: :system do
     end
 
     context "an author" do
-      it "see stars as count of posts on each day" do
-        another_user = create(:user)
+      before do
+        @another_user = create(:user)
         my_post1 = create(:post, user_id: @user.id, day_id: @day.id)
         my_post2 = create(:post, user_id: @user.id, day_id: @day.id)
-        another_user_post = create(:post, user_id: another_user.id, day_id: @day.id)
+        another_user_post = create(:post, user_id: @another_user.id, day_id: @day.id)
+      end
 
+      it "an author sees stars as count of posts on each day" do
         visit posts_index_path
         expect(all('.fas').size).to eq(2)
       end
+
+      it "another user sees stars as count of their posts" do
+        click_link "Log Out"
+        visit root_path
+        click_link "Log In"
+        fill_in "Email", with: @another_user.email
+        fill_in "Password", with: @another_user.password
+        click_button "commit"
+
+        visit posts_index_path
+        expect(all('.fas').size).to eq(1)
+      end
     end
+
   end
 
 
