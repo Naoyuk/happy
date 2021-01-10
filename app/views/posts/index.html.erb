@@ -3,6 +3,7 @@
     <%= link_to "Post Happy", "/days/new", class: "btn" %>
         <% @days.each do |d| %>
         <h2 class="post-date-header"><%= d.date %></h2>
+        <%= d.star(my_posts(d.id)).html_safe %>
         <ul class="posts-index-day">
             <% posts = my_posts(d.id) %>
             <% posts.each do |post| %>

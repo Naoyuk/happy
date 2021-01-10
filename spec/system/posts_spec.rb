@@ -49,6 +49,11 @@ RSpec.describe "Posts", type: :system do
       visit "/posts/2"
       expect(page).to_not have_content "his post"
     end
+
+    context "an author" do
+      it "see stars as count of posts on each day"
+    end
   end
+
 
 end
