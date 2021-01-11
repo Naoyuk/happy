@@ -54,24 +54,6 @@ RSpec.describe "Posts", type: :request do
   end
 
   describe "#create" do
-    context "as an authenticated user" do
-      before do
-        @user = create(:user)
-        @day = create(:day)
-      end
-
-      it "adds a post" do
-
-        # post_params = attributes_for(:post)
-        # post_params[:user_id] = @user.id
-        # post_params[:day_id] = @day.id
-        # sign_in @user
-        # expect {
-        #   post "/posts/create", params: { post: post_params }
-        # }.to change(@user.posts, :count).by(1)
-      end
-    end
-
     context "as a guest" do
       it "redirect to root" do
         post "/posts/create"

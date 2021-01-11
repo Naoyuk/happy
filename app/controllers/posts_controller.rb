@@ -16,21 +16,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = Post.new(content: params[:content], day_id: params[:day_id], user_id: current_user.id)
-    # if @post.save
-    #   redirect_to "/posts/index"
-    # else
-    #   render "new"
-    # end
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.content = params[:content]
+    # @post.content = params[:content]
+    @post.update(post_params)
     if @post.save
       redirect_to '/posts/index'
     else
@@ -39,16 +32,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to "/posts/index"
   end
 
   protected
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
 
   def post_owner?
     unless @post.owner == current_user
@@ -58,9 +46,17 @@ class PostsController < ApplicationController
 
   private
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
   def login_user?
     unless user_signed_in?
       redirect_to root_path
     end
+  end
+
+  def post_params
+    params.permit(:content)
   end
 end

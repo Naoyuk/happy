@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :system do
-
   before do
     driven_by(:rack_test)
   end
@@ -77,6 +76,4 @@ RSpec.describe "Posts", type: :system do
     end
 
   end
-
-
 end

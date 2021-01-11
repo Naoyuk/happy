@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Day, type: :model do
-  
   it "is valid with a date" do
     day = create(:day)
     expect(day).to be_valid
@@ -21,5 +20,4 @@ RSpec.describe Day, type: :model do
     day.valid?
     expect(day.errors[:date]).to include("has already been taken")
   end
-  
 end
