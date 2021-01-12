@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  around_action :user_time_zone, if: :current_user
+
   def after_sign_in_path_for(resource)
     posts_index_path
   end
@@ -11,5 +13,12 @@ class ApplicationController < ActionController::Base
     
     # add strong parameter of name when you update your account
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:timezone])
+  end
+
+  private
+
+  def user_time_zone(&block)
+    Time.use_zone(current_user.timezone, &block)
   end
 end
