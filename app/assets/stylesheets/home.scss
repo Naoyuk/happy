@@ -37,7 +37,7 @@
   
 /* about ================================ */
 .about-main {
-    padding: 180px 8% 0;
+    padding: 100px 8% 0;
     color: white;
 }
   
@@ -54,4 +54,31 @@
   
 .about-img {
     width: 84%;
+}
+
+blockquote {
+  color: #111;
+  border-left: 10px solid #eee;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 1.4em;
+}
+
+blockquote:before {
+  color: #eee;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+.quote_link {
+    text-decoration: underline;
+    color: #fff;
 }
