@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  around_action :user_time_zone, if: :current_user
+  # around_action :user_time_zone, if: :current_user
 
   def after_sign_in_path_for(resource)
     posts_index_path
@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def user_time_zone(&block)
-    Time.use_zone(current_user.timezone, &block)
+  # def user_time_zone(&block)
+  #   Time.use_zone(current_user.timezone, &block)
+  # end
+
+  def set_time_zone
+    Time.zone = current_user.timezone if current_user
   end
 end

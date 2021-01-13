@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, uniqueness: true
+  # validates :time_zone, inclusion: { in: ActiveSupport::TimeZone.all.map(&:name) }
 
   has_many :posts
 end
