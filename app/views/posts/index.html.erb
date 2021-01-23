@@ -1,6 +1,6 @@
 <div class="main posts-index">
     <div class="container">
-    <%= link_to "Post Happy", "/days/new", class: "btn" %>
+    <%= link_to "Post Happy", "/days/new", class: "btn btn-primary post-btn" %>
         <% @days.each do |d| %>
         <h2 class="post-date-header"><%= d.date %></h2>
         <%= d.star(my_posts(d.id)).html_safe %>
